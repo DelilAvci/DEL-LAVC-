@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinesi</title>
+</head>
+<body>
+        Sayı 1:<br />
+        <input type="number" id="sayi1" /><br />
+        Sayı 2:<br />
+        <input type="number" id="sayi2" /><br />
+        İşlem Seçiniz:<br/>
+        <select id="islem">
+            <option value="topla">Topla</option>
+            <option value="cikar">Çıkar</option>
+        </select>
+        <br />
+        <input type="button" value="HESAPLA" onclick="islemYap()" />
+        <hr/>
+        <div id="sonuc"></div>
+        <script>
+            function islemYap()
+            {
+                const sayi1=Number(document.querySelector("#sayi1").value);
+                const sayi2=Number(document.querySelector("#sayi2").value);
+                const islem=document.querySelector("#islem").value;
+                let sonuc = 0;
+                let islemGosterim = "";
+                switch(islem)
+                {
+                    case "topla":
+                        sonuc = sayi1+sayi2;
+                        islemGosterim = "+";
+                        break;
+                    case "cikar":
+                        sonuc = sayi1-sayi2;
+                        islemGosterim = "-";
+                        break;
+                }
+                //document.querySelector("#sonuc").innerHTML = sonuc;
+                //document.querySelector("#sonuc").innerHTML = sayi1+" "+islemGosterim+" "+sayi2+" = "+sonuc ;
+                //document.querySelector("#sonuc").innerHTML = '<span style="color:green">'+sayi1+"</span> "+islemGosterim+' <span style="color:red">'+sayi2+"</span> = <b>"+sonuc+"</b>" ;
+                document.querySelector("#sonuc").innerHTML = `<span style="color:red">${sayi1}</span> ${islemGosterim} <span style="color:green">${sayi2}</span> = <b>${sonuc}</b>` ;
+            }
+        </script>
+</body>
+</html>

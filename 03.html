@@ -1,0 +1,35 @@
+<script>
+    let sinif = [1,2,3];
+    sinif = Array(1,2,3);
+    console.log(sinif);
+    document.write(sinif);
+    //pop dizinin son elemanını alır
+    console.log(sinif.pop())
+    console.log(sinif)
+    console.log(sinif.pop())
+    console.log(sinif)
+    //push dizinin sonuna eleman ekler
+    sinif.push(4);
+    console.log(sinif)
+
+    //shift dizini ilk elemanını alır
+    console.log(sinif.shift())
+    console.log(sinif)
+    sinif.unshift(5);
+    // unshift dizin en başına eleman ekler
+    console.log(sinif)
+    console.log(sinif.join("-"));
+
+    let metin = "1-2-3-4-5";
+    sinif2 = metin.split("-")
+    console.log(sinif2);
+    // 1. parametre : ekleme yeri
+    // 2. parametre : eklenirken kaç eleman silinecek
+    // 3. parametre: yeni eklenecek eleman(lar)
+    sinif2.splice(2,0,'6','7');
+    console.log(sinif2);
+    console.log(sinif2.sort());
+    console.log(sinif2.asort());
+    
+
+</script>
